@@ -39,6 +39,7 @@ local function construct_building(inner_length, inner_width, inner_height)
 end
 
 local function initialize(horizontal_build_direction, inner_width)
+  current_slot = 1
   if horizontal_build_direction == "l" then
     turn("left")
   elseif horizontal_build_direction == "r" then
