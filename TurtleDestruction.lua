@@ -51,6 +51,31 @@ function drill(times, direction)
   end
 end
 
+function drilling_pivot(direction)
+  turn(direction)
+  drill(1)
+  turn(direction)
+end
+
+function drill_row(direction, length)
+  drilling_pivot(direction)
+  drill(length - 1)
+end
+
+function drill_rectangular_area(length, width)
+  drill(width - 1)
+
+  next_turn = "right"
+  for times = 1, length - 1, 1 do
+    drill_row(next_turn)
+    if next_turn == "right" then
+      next_turn = "left"
+    else
+      next_turn = "right"
+    end
+  end
+end
+
 function grind(times, surface)
   surface = surface or "down"
 
@@ -69,7 +94,7 @@ function reverse_grind(times, surface)
   end
 end
 
-function destructive_pivot(direction, surface)
+function grinding_pivot(direction, surface)
   turn(direction)
   grind(1)
   turn(direction)
@@ -78,14 +103,14 @@ end
 function grind_row(direction, length, surface)
   surface = surface or "down"
 
-  destructive_pivot(direction)
-  grind(length)
+  grinding_pivot(direction, surface)
+  grind(length, surface)
 end
 
 function grind_expanding_row(direction, reverse_times, mine_times, surface)
   surface = surface or "down"
 
-  destructive_pivot(direction)
+  grinding_pivot(direction)
   reverse_grind(reverse_times)
   grind(mine_times)
 end
@@ -94,6 +119,6 @@ function grind_contracting_row(reverse_times, direction, mine_times, surface)
   surface = surface or "down"
 
   reverse_grind(reverse_times)
-  destructive_pivot(direction)
+  grinding_pivot(direction)
   grind(mine_times)
 end
