@@ -41,7 +41,7 @@ end
 local function initialize(horizontal_build_direction, inner_width)
   if horizontal_build_direction == "l" then
     turn("left")
-  elseif horizontal_build_direction = "r" then
+  elseif horizontal_build_direction == "r" then
     turn("left")
     reverse(inner_width + 1)
   else
@@ -61,7 +61,8 @@ local function user_interface()
   print("How high would you like the walls to be (internally)?")
   local inner_height = tonumber(read())
 
-  local material_buffer_required = 2 * ((inner_length + 2) * (inner_width + 2) + (inner_height * (inner_length + inner_width - 2))
+  local material_buffer_required = 2 * ((inner_length + 2) * (inner_width + 2) + (inner_height * (inner_length + inner_width - 2)))
+
   print("You will require " .. material_buffer_required .. " blocks to complete this operation.")
 
   if material_buffer_required > (9 * 64) then
