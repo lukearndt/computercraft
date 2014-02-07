@@ -23,8 +23,14 @@ end
 local function place_layer(inner_length, inner_width)
   construct_up(1)
   construct(inner_width + 1)
+  local next_rotation = "right"
   for times = 1, inner_length + 1, 1 do
-    build_row("right", inner_width + 1)
+    build_row(next_rotation, inner_width + 1)
+    if next_rotation == "right" then
+      next_rotation = "left"
+    else
+      next_rotation = "right"
+    end
   end
   turn("around")
 end
