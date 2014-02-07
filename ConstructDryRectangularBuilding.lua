@@ -5,6 +5,7 @@ local function drill_previous_layer(inner_length, inner_width)
   forward(1)
   turn("right")
   forward(1)
+  turn("left")
 
   drill(2, "down")
   build("up")
@@ -23,6 +24,7 @@ end
 local function place_layer(inner_length, inner_width)
   construct_up(1)
   construct(inner_width + 1)
+
   local next_rotation = "right"
   for times = 1, inner_length + 1, 1 do
     build_row(next_rotation, inner_width + 1)
@@ -32,6 +34,7 @@ local function place_layer(inner_length, inner_width)
       next_rotation = "right"
     end
   end
+
   turn("around")
 end
 
