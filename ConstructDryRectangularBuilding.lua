@@ -73,7 +73,7 @@ local material_buffer_required = 2 * ((inner_length + 2) * (inner_width + 2) + (
 
 print("You will require " .. material_buffer_required .. " blocks to complete this operation.")
 
-if material_buffer_required > (9 * 64) then
+if material_buffer_required > (16 * 64) then
   print("WARNING: A completely full turtle will run out of material before this building is complete!")
 else
   print("A completely full turtle should have enough materials to complete the building.")

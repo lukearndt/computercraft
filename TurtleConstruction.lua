@@ -4,7 +4,7 @@ function ensure_materials_available()
   current_slot = current_slot or 1
   turtle.select(current_slot)
   if turtle.getItemCount(current_slot) == 0 then
-    if current_slot == 9 then
+    if current_slot == 16 then
       current_slot = 1
       print("I think I'm out of materials. Fill me up and press return?")
       read()
