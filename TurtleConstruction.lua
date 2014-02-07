@@ -9,9 +9,9 @@ function ensure_materials_available()
     else
       print("Out of materials! Please fill me up and press enter.")
       read()
-      ensure_materials_available()
     end
     turtle.select(current_slot)
+    ensure_materials_available()
   end
 end
 
