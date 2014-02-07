@@ -1,17 +1,18 @@
 load_package("turtle_movement")
 
 function ensure_materials_available()
-  if turtle.getItemCount(current_slot) < 1 then
-    if current_slot < 9 then
-      current_slot = current_slot + 1
-    elseif turtle.getItemCount(1) > 0 then
+  current_slot = current_slot or 1
+  turtle.select(current_slot)
+  if turtle.getItemCount(current_slot) == 0 then
+    if current_slot == 9 then
       current_slot = 1
-    else
-      print("Out of materials! Please fill me up and press enter.")
+      print("I think I'm out of materials. Fill me up and press return?")
       read()
+      ensure_materials_available()
+    else
+      current_slot = current_slot + 1
+      ensure_materials_available()
     end
-    turtle.select(current_slot)
-    ensure_materials_available()
   end
 end
 
