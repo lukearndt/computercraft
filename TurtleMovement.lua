@@ -31,7 +31,9 @@ function smash_block_and_move(direction)
     error("invalid direction to smash block and move: " .. direction)
   end
   if success_is_still == false then
-    error("unable to move " .. direction .. ", even after smashing it")
+    print("Unable to move " .. direction .. ", even after attempting to break it")
+    print("Press return to resume the program when the path is clear.")
+    read()
   end
 end
 
