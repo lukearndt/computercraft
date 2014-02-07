@@ -89,6 +89,8 @@ local function user_interface()
   if not continue_confirmation == "y" then error("Okie dokie, see you later!") end
 end
 
+user_interface()
+
 initialize(horizontal_build_direction, inner_width)
 
 construct_building(inner_length, inner_width, inner_height, horizontal_build_direction)
