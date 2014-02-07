@@ -1,3 +1,17 @@
+function ensure_fuel_available()
+  if turtle.getFuelLevel() < 10 then
+    print("I'm really tired. Put some fuel into slot 1 and press return?")
+    read()
+    if turtle.refuel(1) then
+      print("Thanks! I'll keep going when you hit return again.")
+      read()
+    else
+      print("I don't see a valid fuel in slot 1! :(")
+    end
+    ensure_fuel_available()
+  end
+end
+
 function turn(direction)
   print("Turning " .. direction)
   if direction == "left" then
@@ -39,6 +53,8 @@ function smash_block_and_move(direction)
 end
 
 function move(direction, times)
+  ensure_fuel_available()
+
   print ("Moving " .. direction .. " " .. times .. " spaces")
   local success = false
 
