@@ -7,8 +7,10 @@ function ensure_materials_available()
     elseif turtle.getItemCount(1) > 0 then
       current_slot = 1
     else
-      error("out of materials! :(")
+      print("Out of materials! Please fill me up and press enter.")
+      read()
     end
+    turtle.select(current_slot)
   end
 end
 
