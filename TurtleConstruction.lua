@@ -2,8 +2,13 @@ load_package("turtle_movement")
 
 function ensure_materials_available()
   if turtle.getItemCount(current_slot) < 1 then
-    turtle.select(current_slot + 1)
-    current_slot = current_slot + 1
+    if current_slot < 9 then
+      current_slot = current_slot + 1
+    elseif turtle.getItemCount(1) > 0 then
+      current_slot = 1
+    else
+      error("out of materials! :(")
+    end
   end
 end
 
