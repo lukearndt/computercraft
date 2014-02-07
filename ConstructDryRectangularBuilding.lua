@@ -49,47 +49,43 @@ local function initialize(horizontal_build_direction, inner_width)
   end
 end
 
-local function user_interface()
-  print("Welcome to the dry rectangular building constructor.")
+print("Welcome to the dry rectangular building constructor.")
 
-  print("How long would you like the building to be (internally)?")
-  local inner_length = tonumber(read())
+print("How long would you like the building to be (internally)?")
+local inner_length = tonumber(read())
 
-  print("How wide would you like the building to be (internally)?")
-  local inner_width = tonumber(read())
+print("How wide would you like the building to be (internally)?")
+local inner_width = tonumber(read())
 
-  print("How high would you like the walls to be (internally)?")
-  local inner_height = tonumber(read())
+print("How high would you like the walls to be (internally)?")
+local inner_height = tonumber(read())
 
-  local material_buffer_required = 2 * ((inner_length + 2) * (inner_width + 2) + (inner_height * (inner_length + inner_width - 2)))
+local material_buffer_required = 2 * ((inner_length + 2) * (inner_width + 2) + (inner_height * (inner_length + inner_width - 2)))
 
-  print("You will require " .. material_buffer_required .. " blocks to complete this operation.")
+print("You will require " .. material_buffer_required .. " blocks to complete this operation.")
 
-  if material_buffer_required > (9 * 64) then
-    print("WARNING: A completely full turtle will run out of material before this building is complete!")
-  else
-    print("A completely full turtle should have enough materials to complete the building.")
-  end
-
-  print("Should I smash anything that gets in my way? y/n")
-  local smash_obstacles = read()
-
-  if smash_obstacles == "y" then
-    turtle_destructive_movement_mode = true
-  else
-    turtle_destructive_movement_mode = false
-  end
-
-  print("Should I build to the left or to the right? l/r")
-  local horizontal_build_direction = read()
-
-  print("Would you like to go ahead and construct the building? y/n")
-  local continue_confirmation = read()
-
-  if not continue_confirmation == "y" then error("Okie dokie, see you later!") end
+if material_buffer_required > (9 * 64) then
+  print("WARNING: A completely full turtle will run out of material before this building is complete!")
+else
+  print("A completely full turtle should have enough materials to complete the building.")
 end
 
-user_interface()
+print("Should I smash anything that gets in my way? y/n")
+local smash_obstacles = read()
+
+if smash_obstacles == "y" then
+  turtle_destructive_movement_mode = true
+else
+  turtle_destructive_movement_mode = false
+end
+
+print("Should I build to the left or to the right? l/r")
+local horizontal_build_direction = read()
+
+print("Would you like to go ahead and construct the building? y/n")
+local continue_confirmation = read()
+
+if not continue_confirmation == "y" then error("Okie dokie, see you later!") end
 
 initialize(horizontal_build_direction, inner_width)
 
