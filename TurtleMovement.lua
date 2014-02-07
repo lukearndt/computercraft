@@ -12,6 +12,29 @@ function turn(direction)
   end
 end
 
+function smash_block_and_move(direction)
+  if direction == "forward" then
+    turtle.dig()
+    success_is_still = turtle.forward()
+  elseif direction == "up" then
+    turtle.digUp()
+    success_is_still = turtle.up()
+  elseif direction == "down" then
+    turtle.digDown()
+    success_is_still = turtle.down()
+  elseif direction == "back" then
+    turn("around")
+    turtle.dig()
+    turn("around")
+    success_is_still = turtle.back()
+  else
+    error("invalid direction to smash block and move: " .. direction)
+  end
+  if success_is_still == false then
+    error("unable to move " .. direction .. ", even after smashing it")
+  end
+end
+
 function move(direction, times)
   print ("Moving " .. direction .. " " .. times .. " spaces")
   local success = false
@@ -29,7 +52,13 @@ function move(direction, times)
       error("invalid direction to move")
     end
 
-    if not success then error("unable to move " .. direction) end
+    if not success then
+      if turtle_destructive_movement_mode == true then
+        smash_block_and_move(direction)
+      else
+        error("unable to move in direction: " .. direction)
+      end
+    end
   end
 end
 

@@ -17,7 +17,7 @@ function smash(blocks, direction)
 
   mine(direction)
   for times = 1, blocks - 1, 1 do
-    move(1, direction)
+    move(direction, 1)
     mine(direction)
   end
   reverse(blocks - 1)
@@ -34,8 +34,8 @@ end
 function smash_symmetrical_area(half_width_array)
   steps_taken = 0
   for step = 1, 128, 1 do
-    if half_width_array[step] == nil then break end
     smash_either_side(half_width_array[step])
+    if half_width_array[step + 1] == nil then break end
     drill(1)
     steps_taken = steps_taken + 1
   end
