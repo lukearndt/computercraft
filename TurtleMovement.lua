@@ -34,6 +34,7 @@ function smash_block_and_move(direction)
     print("Unable to move " .. direction .. ", even after attempting to break it")
     print("Press return to resume the program when the path is clear.")
     read()
+    smash_block_and_move(direction)
   end
 end
 
