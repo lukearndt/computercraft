@@ -67,7 +67,7 @@ function drill_rectangular_area(length, width)
 
   local next_turn = "right"
   for times = 1, length - 1, 1 do
-    drill_row(next_turn)
+    drill_row(next_turn, width)
     if next_turn == "right" then
       next_turn = "left"
     else
