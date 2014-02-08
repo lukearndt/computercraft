@@ -6,13 +6,14 @@ function ensure_materials_available()
   if turtle.getItemCount(current_slot) == 0 then
     if current_slot == 16 then
       current_slot = 1
-      print("I think I'm out of materials. Fill me up and press return?")
-      read()
-      ensure_materials_available()
+      if turtle.getItemCount(current_slot) == 0 then
+        print("I think I'm out of materials. Fill me up and press return?")
+        read()
+      end
     else
       current_slot = current_slot + 1
-      ensure_materials_available()
     end
+    ensure_materials_available()
   end
 end
 
