@@ -18,6 +18,8 @@ local function pastebin_identifier(package_name)
     identifier = "FGbmCdn8"
   elseif package_name == "construct_dry_rectangular_building" then
     identifier = "x8xNzSr3"
+  elseif package_name == "construct_rectangular_chimney" then
+    identifier = "TVKkT2sS"
   else
     error("Invalid package name")
   end
