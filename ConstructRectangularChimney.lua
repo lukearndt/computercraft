@@ -37,10 +37,10 @@ local inner_width = tonumber(read())
 print("How high would you like the chimney to be?")
 local height = tonumber(read())
 
-local materials_required = 2 * (inner_width + inner_height) + 4
-print("You will require " .. materials_required .. " blocks to complete this operation.")
+local material_stacks_required = height * (2 * (inner_width + inner_length) + 4) / 64
+print("You will require " .. material_stacks_required .. " stacks of material to complete this operation.")
 
-if materials_required > (16 * 64) then
+if material_stacks_required > 16 then
   print("WARNING: A completely full turtle will run out of material before this building is complete!")
 else
   print("A completely full turtle should have enough materials to complete the building.")
