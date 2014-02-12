@@ -2,9 +2,9 @@ load_package("turtle_construction")
 
 local function place_layer(inner_length, inner_width, build_direction)
   for times = 1, 2, 1 do
-    build(inner_length + 1)
+    construct(inner_length + 1)
     turn(build_direction)
-    build(inner_width + 1)
+    construct(inner_width + 1)
     turn(build_direction)
   end
 end
