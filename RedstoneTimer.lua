@@ -38,4 +38,4 @@ for side = 1, side_count, 1 do
   sides[side] = read()
 end
 
-redstone_timer(emit_length, emit_delay, sides)
+redstone_timer(emit_length, emit_delay, side_count, sides)
