@@ -26,8 +26,16 @@ end
 print("How long would you like to emit for each cycle?")
 local emit_length = tonumber(read())
 
+if emit_length < 2 then
+  error("I'm sorry, Dave. I can't let you lag the server like that.")
+end
+
 print("How long should each cycle be, end to end?")
 local emit_delay = tonumber(read()) - emit_length
+
+if emit_delay < 3 then
+  error("I'm sorry, Dave. I can't let you lag the server like that.")
+end
 
 local sides = {}
 print("How many sides would you like to emit on?")
