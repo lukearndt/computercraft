@@ -40,6 +40,8 @@ execute("name_of_the_program")
 
 A list of programs can be found in the package manager. The more recent ones are better written; I haven't really gone back and cleaned up all of my older stuff.
 
+Once your new program is set up to run the program from the package manager, just type the name of the loader program that you made. In my example, you'd just type 'do' in the computer prompt and off you go!
+
 ### Using one of my libraries
 
 If you want to use a library from within a program that you are writing, just load the package at the beginning of your file. For example, if you want to use the TurtleMovement library, put the following at the start of your program:
