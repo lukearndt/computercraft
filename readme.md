@@ -14,7 +14,6 @@ In your computer, in game, create and open a file called startup. Do this by typ
 edit startup
 ```
 
-
 Put the following in to the file:
 
 ```lua
@@ -32,7 +31,6 @@ To run a specific program through the package manager, create a new file. I like
 ```
 edit do
 ```
-
 
 In the file, just put the following:
 
