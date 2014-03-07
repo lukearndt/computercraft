@@ -7,3 +7,7 @@ function validate(input, allowed_values)
     end
   end
 end
+
+function valid_read(allowed_values)
+  validate(read(), allowed_values)
+end
