@@ -12,6 +12,10 @@ function valid_read(allowed_values)
   validate(read(), allowed_values)
 end
 
+function valid_yes_no()
+  valid_read({ "y", "n" })
+end
+
 function valid_number()
   tonumber(read())
 end
