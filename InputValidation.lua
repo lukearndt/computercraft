@@ -11,3 +11,7 @@ end
 function valid_read(allowed_values)
   validate(read(), allowed_values)
 end
+
+function valid_number()
+  tonumber(read())
+end
