@@ -1,12 +1,13 @@
 load_package("turtle_movement")
 
 function mine(direction)
+  ensure_fuel_available()
   if direction == "down" then
-    turtle.digDown()
+    return turtle.digDown()
   elseif direction == "up" then
-    turtle.digUp()
+    return turtle.digUp()
   elseif direction == "forward" then
-    turtle.dig()
+    return turtle.dig()
   else
     error("invalid direction to mine: " .. direction)
   end
