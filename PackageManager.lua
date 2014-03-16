@@ -11,9 +11,11 @@ local function pastebin_identifier(package_name)
   elseif package_name == "redstone_controller" then
     identifier = "UeBVf26j"
   elseif package_name == "redstone_timer_cli" then
-    identifier = "placeholder"
+    identifier = "NyV6wKf4"
   elseif package_name == "redstone_timer_ui" then
     identifier = "placeholder"
+  elseif package_name == "redstone_timer_ui" then
+    identifier = "PaznyPGB"
   elseif package_name == "construct_circular_building" then
     identifier = "qn3hGMNZ"
   elseif package_name == "destroy_circular_building" then
